@@ -22,6 +22,7 @@
                                     <th v-if="userLogged.rol.includes('Administrador')">Usuario Responsable</th>
                                     <th v-else-if="userLogged.rol.includes('Secretario')">Enviado Por</th>
                                     <th v-else>Registrado Por</th>
+                                    <th>Observación</th>
                                     <th>Acción</th>
                                 </tr>
                             </thead>
@@ -47,6 +48,7 @@
                                     </td>
                                     <td>{{item.fechaCambioEstado}}</td>
                                     <td>{{item.usuarioCambioEstado}}</td>
+                                    <td>{{item.descripcion}}</td>
                                     <td class="fit">
                                         <router-link v-if="userLogged.rol=='Juzgado' && (item.idEstado==1 || item.idEstado==3)" class="btn btn-info btn-sm" :to="{ name: 'resoluciones.edit', params: { id: item.idResolucion } }">
                                             <i class="c-icon cil-pencil"></i>

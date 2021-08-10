@@ -148,13 +148,14 @@
 											<th class="text-center">N°</th>
 											<th @click="sortItems('numeroResolucion')" class="pr-4">Nro. Resolución <i class="c-icon arrow-position" :class="paramsSort.orderBy === 'numeroResolucion' ? (paramsSort.orderDirection == 'asc' ? 'cil-arrow-top' : 'cil-arrow-bottom') : 'cil-arrow-top icon-transparent'"></i></th>
 											<th @click="sortItems('fechaResolucion')" class="pr-4">Fecha Emisión <i class="c-icon arrow-position" :class="paramsSort.orderBy === 'fechaResolucion' ? (paramsSort.orderDirection == 'asc' ? 'cil-arrow-top' : 'cil-arrow-bottom') : 'cil-arrow-top icon-transparent'"></i></th>
-											<th @click="sortItems('tipoResolucion')" class="pr-4">Tipo Resolución <i class="c-icon arrow-position" :class="paramsSort.orderBy === 'tipoResolucion' ? (paramsSort.orderDirection == 'asc' ? 'cil-arrow-top' : 'cil-arrow-bottom') : 'cil-arrow-top icon-transparent'"></i></th>
-											<th @click="sortItems('formaResolucion')" class="pr-4">Forma Resolución <i class="c-icon arrow-position" :class="paramsSort.orderBy === 'formaResolucion' ? (paramsSort.orderDirection == 'asc' ? 'cil-arrow-top' : 'cil-arrow-bottom') : 'cil-arrow-top icon-transparent'"></i></th>
+											<!-- <th @click="sortItems('tipoResolucion')" class="pr-4">Tipo Resolución <i class="c-icon arrow-position" :class="paramsSort.orderBy === 'tipoResolucion' ? (paramsSort.orderDirection == 'asc' ? 'cil-arrow-top' : 'cil-arrow-bottom') : 'cil-arrow-top icon-transparent'"></i></th> -->
+											<!-- <th @click="sortItems('formaResolucion')" class="pr-4">Forma Resolución <i class="c-icon arrow-position" :class="paramsSort.orderBy === 'formaResolucion' ? (paramsSort.orderDirection == 'asc' ? 'cil-arrow-top' : 'cil-arrow-bottom') : 'cil-arrow-top icon-transparent'"></i></th> -->
 											<th @click="sortItems('proceso')" class="pr-4">Tipo Penal <i class="c-icon arrow-position" :class="paramsSort.orderBy === 'proceso' ? (paramsSort.orderDirection == 'asc' ? 'cil-arrow-top' : 'cil-arrow-bottom') : 'cil-arrow-top icon-transparent'"></i></th>
 											<th @click="sortItems('materia')" class="pr-4">Materia <i class="c-icon arrow-position" :class="paramsSort.orderBy === 'materia' ? (paramsSort.orderDirection == 'asc' ? 'cil-arrow-top' : 'cil-arrow-bottom') : 'cil-arrow-top icon-transparent'"></i></th>
 											<th @click="sortItems('codigoResolucion')" class="pr-4">Codigo o Nurej <i class="c-icon arrow-position" :class="paramsSort.orderBy === 'codigoResolucion' ? (paramsSort.orderDirection == 'asc' ? 'cil-arrow-top' : 'cil-arrow-bottom') : 'cil-arrow-top icon-transparent'"></i></th>
 											<th @click="sortItems('estado')" class="pr-4">Estado <i class="c-icon arrow-position" :class="paramsSort.orderBy === 'activo' ? (paramsSort.orderDirection == 'asc' ? 'cil-arrow-top' : 'cil-arrow-bottom') : 'cil-arrow-top icon-transparent'"></i></th>
 											<th @click="sortItems('fechaRegistro')" class="pr-4">Fecha Registro <i class="c-icon arrow-position" :class="paramsSort.orderBy === 'fechaRegistro' ? (paramsSort.orderDirection == 'asc' ? 'cil-arrow-top' : 'cil-arrow-bottom') : 'cil-arrow-top icon-transparent'"></i></th>
+											<th @click="sortItems('descripcion')" class="pr-4">Observación <i class="c-icon arrow-position" :class="paramsSort.orderBy === 'descripcion' ? (paramsSort.orderDirection == 'asc' ? 'cil-arrow-top' : 'cil-arrow-bottom') : 'cil-arrow-top icon-transparent'"></i></th>
 											<th>Acciones</th>
 										</tr>
 									</thead>
@@ -173,8 +174,8 @@
 											<td class="text-center">{{index + 1}}</td>
 											<td>{{item.numeroResolucion}}</td>
 											<td>{{item.fechaResolucionFormat}}</td>
-											<td>{{item.tipoResolucion}}</td>
-											<td>{{item.formaResolucion}}</td>
+											<!-- <td>{{item.tipoResolucion}}</td> -->
+											<!-- <td>{{item.formaResolucion}}</td> -->
 											<td width="20%">{{item.proceso}}</td>
 											<td>{{item.materia}}</td>
 											<td>{{item.codigoResolucion}}</td>
@@ -185,6 +186,7 @@
 												<span v-else class="badge badge-success">Validado</span>
 											</td>
 											<td>{{item.fechaRegistroFormat}}</td>
+											<td>{{item.descripcion}}</td>
 											<td class="fit">
 												<router-link v-if="userLogged.rol=='Juzgado' && (item.idEstado==1 || item.idEstado==3)" class="btn btn-info btn-sm" :to="{ name: 'resoluciones.edit', params: { id: item.idResolucion } }">
 													<i class="c-icon cil-pencil"></i>

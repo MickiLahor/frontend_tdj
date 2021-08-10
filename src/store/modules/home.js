@@ -34,7 +34,8 @@ const actions = {
 					idEstado: item.fidEstado,
 					//fechaCambioEstado: item.fechaRegistro,
 					fechaCambioEstado: moment(item.fechaRegistro).format('DD-MM-YYYY hh:mm:ss'),
-					usuarioCambioEstado: item.usuarioRegistro
+					usuarioCambioEstado: item.usuarioRegistro,
+					descripcion: item.descripcion
 				});
 			});
 			console.log(lista);

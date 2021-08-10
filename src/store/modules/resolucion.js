@@ -142,6 +142,7 @@ const actions = {
 					registroActivo: item.registroActivo,
 					fechaRegistro: item.fechaRegistro,
 					fechaRegistroFormat: moment(item.fechaRegistro).format('DD-MM-YYYY hh:mm:ss'),
+					descripcion: item.HistorialEstados[0].descripcion,
 					idEstado: item.HistorialEstados[0].fidEstado,
 					//estado: item.HistorialEstados[0].fidEstado == 1 ? 'Pendiente de Envío' : ()
 				});
